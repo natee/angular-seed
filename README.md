@@ -29,39 +29,35 @@ cd angular-seed
 
 这个项目中有两类依赖：工具和angular框架代码。工具帮助我们管理和测试应用程序。
 
-* 我们通过[node包管理器][npm]`npm`获取工具。
-* 我们通过[客户端代码包管理器][bower]`bower`获取angular代码。
+* 我们通过[node包管理器][npm] `npm` 获取工具。
+* 我们通过[客户端代码包管理器][bower] `bower` 获取angular代码。
 
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+我们已经提前配置了 `npm` 来自动运行 `bower` ，因此我们可以仅仅通过执行：
 
 ```
 npm install
 ```
 
-Behind the scenes this will also call `bower install`.  You should find that you have two new
-folders in your project.
+在这个命令的背后也会执行 `bower install` ，因此你的项目中应该能看见两个新的文件夹。
 
-* `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
+* `node_modules` - 包含我们所需要用到的npm工具包
+* `app/bower_components` - 包含angular框架文件
 
-*Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
+*注意到 `bower_components` 文件夹会被安装到根目录，但是angular-seed通过 `.bowerrc` 文件改变了它的位置，把它放到了app文件夹中，因此它能够更容易通过一个Web服务器提供文件服务。*
 
-### Run the Application
+### 运行应用程序
 
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
+我们用一个简单的开发环境web server预配置了这个项目，启动服务器最简单的方法就是：
 
 ```
 npm start
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
+现在通过访问 `http://localhost:8000/app/index.html` 来浏览这个app。
 
 
 
-## Directory Layout
+## 目录结构
 
     app/                --> all of the files to be used in production
       css/              --> css files
@@ -91,20 +87,20 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
         servicesSpec.js         --> specs for services
 
 
-## Testing
+## 测试
 
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
+angular-seed应用程序中有两类测试：单元测试和端对端测试。
 
-### Running Unit Tests
+### 运行单元测试
 
 The angular-seed app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
-* the configuration is found at `test/karma.conf.js`
-* the unit tests are found in `test/unit/`.
+* 配置文件在 `test/karma.conf.js`
+* 单元测试在 `test/unit/`。
 
-The easiest way to run the unit tests is to use the supplied npm script:
+运行单元测试最简单的方法就是使用附带的npm script:
 
 ```
 npm test
@@ -124,7 +120,7 @@ npm run test-single-run
 ```
 
 
-### End to end testing
+### 端对端测试
 
 The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
