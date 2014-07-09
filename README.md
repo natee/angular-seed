@@ -1,43 +1,36 @@
-# angular-seed — the seed for AngularJS apps
+# AngularJS应用种子项目
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+这是一个典型的[AngularJS](http://angularjs.org/)应用程序框架。你可以用它快速地创建angular webapp项目和这些项目需要的开发环境。
 
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
+这个种子包含了一个示例AngularJS应用程序，并且通过预配置来安装Angular框架和一堆开发测试工具来满足即时web开发。
 
-The seed app doesn't do much, just shows how to wire two controllers and views together.
+这个种子项目仅仅展示了如何把两个controller和view连接起来。
 
+## 起步
 
-## Getting Started
+你可以从克隆angular-seed仓库并且安装一些依赖开始：
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+### 准备条件
 
-### Prerequisites
+你需要用git来克隆angular-seed仓库，你可以从[http://git-scm.com/](http://git-scm.com/)获取。
 
-You need git to clone the angular-seed repository. You can get it from
-[http://git-scm.com/](http://git-scm.com/).
+我们使用一系列的node.js工具来初始化和测试angular-seed，因此你必须安装node.js和node.js的包管理工具（npm）。你可以从[http://nodejs.org/](http://nodejs.org/)获取它们。
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+### 克隆angular-seed
 
-### Clone angular-seed
-
-Clone the angular-seed repository using [git][git]:
+用[git][git]克隆angular-seed仓库：
 
 ```
 git clone https://github.com/angular/angular-seed.git
 cd angular-seed
 ```
 
-### Install Dependencies
+### 安装依赖
 
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
-us manage and test the application.
+这个项目中有两类依赖：工具和angular框架代码。工具帮助我们管理和测试应用程序。
 
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
+* 我们通过[node包管理器][npm]`npm`获取工具。
+* 我们通过[客户端代码包管理器][bower]`bower`获取angular代码。
 
 We have preconfigured `npm` to automatically run `bower` so we can simply do:
 
