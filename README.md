@@ -38,7 +38,7 @@ cd angular-seed
 npm install
 ```
 
-在这个命令的背后也会执行 `bower install` ，因此你的项目中应该能看见两个新的文件夹。
+在这个命令的背后会执行 `bower install` ，因此你的项目中应该能看见两个新的文件夹。
 
 * `node_modules` - 包含我们所需要用到的npm工具包
 * `app/bower_components` - 包含angular框架文件
@@ -97,8 +97,8 @@ The angular-seed app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
-* 配置文件在 `test/karma.conf.js`
-* 单元测试在 `test/unit/`。
+* 配置文件在 `test/karma.conf.js` 目录下。
+* 单元测试在 `test/unit/` 目录下。
 
 运行单元测试最简单的方法就是使用附带的npm script:
 
@@ -106,14 +106,9 @@ configuration file to run them.
 npm test
 ```
 
-This script will start the Karma test runner to execute the unit tests. Moreover, Karma will sit and
-watch the source and test files for changes and then re-run the tests whenever any of them change.
-This is the recommended strategy; if your unit tests are being run every time you save a file then
-you receive instant feedback on any changes that break the expected code functionality.
+这一段脚本会启动Karma运行器来执行单元测试，Karma会监视源文件和测试文件，一旦有任何变动，Karma就会重新运行测试代码。这是一个推荐的做法，当你每次保存一个文件时，如果你的单元测试正在运行，不论任何修改而打破了预期代码的功能，你都可以收到一个及时反馈。
 
-You can also ask Karma to do a single run of the tests and then exit.  This is useful if you want to
-check that a particular version of the code is operating as expected.  The project contains a
-predefined script to do this:
+你也可以让Karma做一个单一测试，然后退出，这个在你想检测特定版本代码是否按照预期运行时是非常有用的。这个项目包含一个预定义的脚本来做到这一点：  
 
 ```
 npm run test-single-run
@@ -122,12 +117,10 @@ npm run test-single-run
 
 ### 端对端测试
 
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
-special features for Angular applications.
+angular-seed自带的端对端测试也是用[Jasmine][jasmine]写的，这些测试通过端对端测试运行器[Protractor][protractor]运行的，它使用原生事件并且对Angular应用有着特殊的功能。
 
-* the configuration is found at `test/protractor-conf.js`
-* the end-to-end tests are found in `test/e2e/`
+* 配置文件在 `test/protractor-conf.js` 目录下。
+* 端对端测试代码在 `test/e2e/` 目录下。
 
 Protractor simulates interaction with our web app and verifies that the application responds
 correctly. Therefore, our web server needs to be serving up the application, so that Protractor
