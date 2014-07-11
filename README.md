@@ -62,6 +62,7 @@ npm start
     app/                --> all of the files to be used in production
       css/              --> css files
         app.css         --> default stylesheet
+        pure.css        --> pure.css framework
       img/              --> image files
       index.html        --> app layout file (the main html template file of the app)
       index-async.html  --> just like index.html, but loads js files asynchronously
@@ -194,7 +195,7 @@ http-server
 
 另外，你也可以选择配置你自己的web服务器，比如apache，或者nginx。只需要把服务于你的项目文件的服务器配置到 `app/` 目录下。
 
-### 运行产出过程App
+### 运行产出过程的App
 
 这取决于你的应用有多复杂和你系统的整体架构，但是最基本的一点就是你必须把产出的应用所用到的所有文件都放到 `app/` 目录下。   
 其它的都可以不管。
