@@ -171,80 +171,59 @@ angular-seed项目支持异步加载Angular框架和应用程序脚本， `index
 npm run update-index-async
 ```
 
-这个命令会复制 `angular-loader.js` 库文件的内容到 `index-async.html` 页面中。
+这个命令会复制 `angular-loader.js` 库文件的内容到 `index-async.html` 页面中。   
 每次你要更新你正在使用的Angular版本时你就可以用这个命令了。
 
-## Serving the Application Files
+## 服务于应用程序文件
 
-While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
+Angular是一种客户端技术，这可以创建一个不需要后端服务器的Angular webapp。我们建议用一个本地的web服务器来服务于这个项目的文件以避免浏览器的安全限制（sandbox）问题，sandbox在不同浏览器表现出来是各异的，但是当一个页面通过 `file://` 模式代替 `http://` 打开时，它经常会阻止类似cookies、xhr等事情的正常工作。
 
+### 运行开发过程中的App
 
-### Running the App during Development
-
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
-tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
-install the tool globally:
+angular-seed自带了一个本地开发服务器，它是node.js的一个工具，叫做[http-server][http-server]。你可以用 `npm start` 命令来启动这个web服务器，但是你应该把这个工具安装在全局中：
 
 ```
 sudo npm install -g http-server
 ```
 
-Then you can start your own development web server to serve static files from a folder by
-running:
+这时你就可以启动你自己的开发web服务器，你可以用它来从一个文件夹中提供一些静态文件，通过下面的命令来运行：
 
 ```
 http-server
 ```
 
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
+另外，你也可以选择配置你自己的web服务器，比如apache，或者nginx。只需要把服务于你的项目文件的服务器配置到 `app/` 目录下。
 
+### 运行产出过程App
 
-### Running the App in Production
+这取决于你的应用有多复杂和你系统的整体架构，但是最基本的一点就是你必须把产出的应用所用到的所有文件都放到 `app/` 目录下。   
+其它的都可以不管。
 
-This really depends on how complex is your app and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
+Angular应用仅仅是需要一堆静态的html、css和js文件放在一个浏览器可以访问的地方。   
 
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
+如果你的Angular应用需要通过xhr或是其它方式与后端打交道，你必须搞清楚什么是符合同源策略的承载静态文件的最佳方法，以及是否适用。通常这是由后端服务器或是通过反向代理中的后端服务器或是web服务器托管文件来完成。
 
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
-
-## Continuous Integration
+## 持续集成
 
 ### Travis CI
 
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
+[Travis CI][travis]是一个可以让你持续集成服务， 它可以监视GitHub上你的仓库发生的代码提交，并且执行一些诸如创建应用程序或者运行测试的脚本。ngular-seed项目包含一个Travis配置文件 `.travis.yml` ，当你提交代码到GitHub上时它就会让Travis来运行测试。   
 
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
+你需要启用Travis和GitHub之间的集成，你可以到Travis官网上获取如何使用Travis的教程。
 
 ### CloudBees
 
-CloudBees have provided a CI/deployment setup:
+CloudBees已经提供了一个CI/deployment设置:
 
 <a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
 <img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
+一旦你运行这段代码，你就会获取这个仓库的克隆版本来作为你私人的git仓库进行开发工作，同时你也会获取一个可以在Firfox和Chrome中运行单元测试和端对端测试的CI服务。
 
 
-## Contact
+## 联系方式
 
-For more information on AngularJS please check out http://angularjs.org/
+获取更多关于AngularJS的信息请访问[http://angularjs.org/](http://angularjs.org/)
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io
