@@ -120,13 +120,13 @@ angular-seed自带的端对端测试也是用[Jasmine][jasmine]写的，这些�
 * 配置文件在 `test/protractor-conf.js` 目录下。
 * 端对端测试代码在 `test/e2e/` 目录下。
 
-量角器可以模拟我们web应用的交互并且验证应用是否正确响应，因此，我们的web服务器需要为应用程序提供服务从而让量角器可以和它进行交互。
+Protractor可以模拟我们web应用的交互并且验证应用是否正确响应，因此，我们的web服务器需要为应用程序提供服务从而让Protractor可以和它进行交互。
 
 ```
 npm start
 ```
 
-除此之外，由于量角器是基于WebDriver创建的，所以我们还需要安装webdriver。angular-seed包含了一个预定义的脚本来做这个工作：
+除此之外，由于Protractor是基于WebDriver创建的，所以我们还需要安装webdriver。angular-seed包含了一个预定义的脚本来做这个工作：
 
 ```
 npm run update-webdriver
