@@ -93,9 +93,7 @@ angular-seed应用程序中有两类测试：单元测试和端对端测试。
 
 ### 运行单元测试
 
-The angular-seed app comes preconfigured with unit tests. These are written in
-[Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
-configuration file to run them.
+angular-seed自带了单元测试，这是用[Jasmine][jasmine]写的，需要用[Karma测试运行器][karma]来运行。我门提供了一个Karma配置文件来运行它们。
 
 * 配置文件在 `test/karma.conf.js` 目录下。
 * 单元测试在 `test/unit/` 目录下。
@@ -122,71 +120,59 @@ angular-seed自带的端对端测试也是用[Jasmine][jasmine]写的，这些�
 * 配置文件在 `test/protractor-conf.js` 目录下。
 * 端对端测试代码在 `test/e2e/` 目录下。
 
-Protractor simulates interaction with our web app and verifies that the application responds
-correctly. Therefore, our web server needs to be serving up the application, so that Protractor
-can interact with it.
+量角器可以模拟我们web应用的交互并且验证应用是否正确响应，因此，我们的web服务器需要为应用程序提供服务从而让量角器可以和它进行交互。
 
 ```
 npm start
 ```
 
-In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
-project comes with a predefined script to do this:
+除此之外，由于量角器是基于WebDriver创建的，所以我们还需要安装webdriver。angular-seed包含了一个预定义的脚本来做这个工作：
 
 ```
 npm run update-webdriver
 ```
 
-This will download and install the latest version of the stand-alone WebDriver tool.
+这个命令会下载并安装最新版本的独立的WebDriver工具。
 
-Once you have ensured that the development web server hosting our application is up and running
-and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
+一旦你确保了托管我们应用程序的开发web服务器启动了并且在运行，而且WebDriver也是最新版本的，你就可以使用附带的npm脚本来运行端对端测试。
 
 ```
 npm run protractor
 ```
 
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
+当应用程序被托管在开发服务器上时，这个脚本就会执行端对端测试。
 
+## 更新Angular
 
-## Updating Angular
+以前我们推荐你把对angular-seed所做的修改合并到你自己的分支项目中。
+现在angular框架的库代码和和工具都是通过包管理工具（npm和bower）来获取，你可以用这个工具来代替更新这些依赖。
 
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
+你可以通过运行下面的命令来更新工具依赖：
 
 ```
 npm update
 ```
 
-This will find the latest versions that match the version ranges specified in the `package.json` file.
+这个命令将会在 `package.json` 文件中找到匹配指定版本号范围内的最新版本进行更新。  
 
-You can update the Angular dependencies by running:
+你可以通过运行下面的命令来更新Angular的依赖：
 
 ```
 bower update
 ```
 
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
+这个命令将会在 `bower.json` 文件中找到匹配指定版本号范围内的最新版本进行更新。
 
+## 异步加载Angular
 
-## Loading Angular Asynchronously
-
-The angular-seed project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
+angular-seed项目支持异步加载Angular框架和应用程序脚本， `index-async.html` 就是用来支持这种加载方式而写的。为了让它能够正常跑起来，你必须注入一系列的Angular JavaScript到HTML页面中。这个项目有一段预定义的脚本来做这个事情：
 
 ```
 npm run update-index-async
 ```
 
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
-
+这个命令会复制 `angular-loader.js` 库文件的内容到 `index-async.html` 页面中。
+每次你要更新你正在使用的Angular版本时你就可以用这个命令了。
 
 ## Serving the Application Files
 
