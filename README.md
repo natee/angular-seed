@@ -21,7 +21,7 @@
 用[git][git]克隆angular-seed仓库：
 
 ```
-git clone https://github.com/angular/angular-seed.git
+git clone https://github.com/natee/angular-seed.git
 cd angular-seed
 ```
 
